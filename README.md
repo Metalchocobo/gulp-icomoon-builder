@@ -14,9 +14,11 @@ You can use this module in two ways:
 You can create gulp task and add it to watcher. Task example:
  
 ```
+const icomoonBuilder = require('gulp-icomoon-builder');
+
 gulp.task('build-fonts', () => {
   gulp.src('./path_to_font/icomoon/selection.json')
-    .pipe(icomoon({
+    .pipe(icomoonBuilder({
       templateType: 'map',
       extraIcons: {
         'custom-icon-1': '\f2b9',
@@ -41,9 +43,11 @@ gulp.task('build-fonts', () => {
 **Note:** Parameter `extraIcons` not working for svg sprites
 
 ```
+const icomoonBuilder = require('gulp-icomoon-builder');
+
 gulp.task('build-svg-sprite', () => {
   gulp.src('./path_to_font/icomoon/selection.json')
-    .pipe(icomoon({
+    .pipe(icomoonBuilder({
       templateType: 'svg',
       filename: 'icons.svg',
     }))
@@ -65,27 +69,7 @@ gulp.task('build-svg-sprite', () => {
 
 Option | Type | Default | Description
 --- | --- | --- | ---
-Option | Type | Default | Description
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+templateType | `string` | *map* | Type of the template. Can be `map`, `var` or `svg`
+externalTemplare | `string` | *none* | Path to custom `Mustache` template. See `/templates` folder
+filename | `string` | *_icons.scss* | Name of your file.
+extraIcons | `object` | *{}* | Additional icons that aren't included in your `Icomoon` project
