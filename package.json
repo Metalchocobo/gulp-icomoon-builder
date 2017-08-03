@@ -1,0 +1,43 @@
+{
+  "name": "gulp-icomoon-builder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bogdan-hepting/gulp-icomoon-builder.git"
+  },
+  "keywords": [
+    "icomoon",
+    "gulp",
+    "font",
+    "icons",
+    "svg"
+  ],
+  "author": {
+    "name": "Bogdan Hepting",
+    "email": "varjatua@gmail.com"
+  },
+  "license": "MIT",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "LICENSE"
+    }
+  ],
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/bogdan-hepting/gulp-icomoon-builder/issues"
+  },
+  "homepage": "https://github.com/bogdan-hepting/gulp-icomoon-builder#readme",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "gulp-util": "^3.0.8",
+    "merge": "^1.2.0",
+    "mustache": "^2.3.0",
+    "through2": "^2.0.3"
+  }
+}
