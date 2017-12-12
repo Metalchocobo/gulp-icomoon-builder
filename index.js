@@ -42,11 +42,19 @@ module.exports = function (opts) {
     if (options.templateType === 'svg') {
       // Add icons path to mustache array to form svg
       icomoon.icons.forEach(function (icon) {
-        mustacheVars.icons.push({
-          path: icon.icon.paths,
-          grid: icon.icon.grid,
-          name: icon.properties.name,
+        let n = icon.properties.name.split(",").map(function (item) {
+          return item.trim();
         });
+
+        n.forEach(function(name){
+          mustacheVars.icons.push({
+            path: icon.icon.paths,
+            grid: icon.icon.grid,
+            name: name
+          });
+        });
+
+        
       });
 
     } else {
