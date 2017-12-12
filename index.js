@@ -46,7 +46,7 @@ module.exports = function (opts) {
           return item.trim();
         });
 
-        n.forEach(function(name){
+        n.forEach(function (name) {
           mustacheVars.icons.push({
             path: icon.icon.paths,
             grid: icon.icon.grid,
@@ -54,18 +54,24 @@ module.exports = function (opts) {
           });
         });
 
-        
+
       });
 
     } else {
       // Add icons to mustache array
       icomoon.icons.forEach(function (icon) {
         let iconProperties = icon.properties;
+        let n = icon.properties.name.split(",").map(function (item) {
+          return item.trim();
+        });
 
-        mustacheVars.icons.push({
-          name: iconProperties.name,
-          code: iconProperties.code.toString(16),
-        })
+        n.forEach(function (name) {
+          mustacheVars.icons.push({
+            name: name,
+            code: iconProperties.code.toString(16),
+          });
+        });
+
       });
 
       // Add extra icons to mustache array
